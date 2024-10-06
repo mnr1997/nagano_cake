@@ -5,11 +5,12 @@ Rails.application.routes.draw do
   }
   
   namespace :admin do
-    root to: "homes#top"
+    root to: "homes#index"
   end
   
-  devise_for :customers
-  
-  root to: "homes#top"
-  get "homes/about" => "homes#about"
+  scope module: :public do
+    root to: "homes#top"
+    devise_for :customers
+    get "homes/about" => "homes#about"
+  end
 end

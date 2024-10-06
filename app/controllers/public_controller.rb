@@ -1,3 +1,4 @@
 class PublicController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_customer!
+
 end
