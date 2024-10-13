@@ -1,5 +1,5 @@
 class Public::HomesController < PublicController
-  skip_before_action :authenticate_customer!, only: [:top]
+  before_action :authenticate_customer!, except: [:top]
   
   def top
   end
