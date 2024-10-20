@@ -7,6 +7,7 @@
         <%= render "devise/shared/error_messages", resource: resource %>
         
         <div class="field">
+          名前
           <%= f.label :last_name %>
           <%= f.text_field :last_name, placeholder: "令和" %>
           <%= f.label :first_name %>
@@ -14,6 +15,7 @@
         </div>
         
         <div class="field">
+          フリガナ
           <%= f.label :last_name_kana %>
           <%= f.text_field :last_name_kana, placeholder: "レイワ" %>
           <%= f.label :first_name_kana %>
