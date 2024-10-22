@@ -15,6 +15,9 @@ Rails.application.routes.draw do
       registrations: "public/devise/registrations",
     }
     get "homes/about" => "homes#about"
-    resources :customers, only: [:show]
+    
+    resources :customers, only: [:show] do
+      get "unsubscribe" => "customers#unsubscribe"
+    end
   end
 end
