@@ -17,7 +17,9 @@ Rails.application.routes.draw do
     get "homes/about" => "homes#about"
     
     resources :customers, only: [:show] do
-      get "unsubscribe" => "customers#unsubscribe"
+      collection do
+        get "unsubscribe" => "customers#unsubscribe"
+      end
     end
   end
 end
