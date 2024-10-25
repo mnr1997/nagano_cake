@@ -19,6 +19,7 @@ Rails.application.routes.draw do
     resources :customers, only: [:show] do
       collection do
         get "unsubscribe" => "customers#unsubscribe"
+        get "withdraw" => "customers#withdraw"
       end
     end
   end
