@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  namespace :admin do
+    get 'genres/index'
+    get 'genres/edit'
+  end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   devise_for :admin, skip: [:registrations, :password], controllers: {
     sessions: "admin/admins/sessions"
@@ -19,7 +23,7 @@ Rails.application.routes.draw do
     resources :customers, only: [:show] do
       collection do
         get "unsubscribe" => "customers#unsubscribe"
-        pat "withdraw" => "customers#withdraw"
+        patch "withdraw" => "customers#withdraw"
       end
     end
   end
