@@ -6,6 +6,26 @@
         <%= f.text_field :name, namespace: "ジャンル名" %>
         <%= f.submit "新規登録", class: "btn btn-block-success" %>
       <% end %>
+      
+      <% @genres.each do |genre| %>
+        <table>
+          <thead>
+            <tr>
+              <th>ジャンル</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <%= genre.name %>
+              </td>
+              <td>
+                <%= link_to "編集する", edit_admin_genre_path(genre), class: "btn btn-block-success" %>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      <% end %>
     </div>
   </div>
 </div>
