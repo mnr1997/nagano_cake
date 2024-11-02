@@ -16,6 +16,8 @@ ja:
         postal_code: "郵便番号(ハイフンなし)"
         address: "住所"
         telephone_number: "電話番号(ハイフンなし)"
+      jenre:
+        name: "ジャンル名"
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'
