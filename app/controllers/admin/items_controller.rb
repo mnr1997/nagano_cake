@@ -1,5 +1,6 @@
 class Admin::ItemsController < AdminController
   def index
+    @items = Item.all
   end
 
   def new
