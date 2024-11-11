@@ -18,6 +18,13 @@ ja:
         telephone_number: "電話番号(ハイフンなし)"
       genre:
         name: "ジャンル名"
+      item:
+        image: "商品画像"
+        name: "商品名"
+        introduction: "商品説明"
+        genre_id: "ジャンル名"
+        price: "税抜き価格"
+        is_active: "販売ステータス"
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'

@@ -1,10 +1,4 @@
 Rails.application.routes.draw do
-  namespace :admin do
-    get 'items/index'
-    get 'items/new'
-    get 'items/show'
-    get 'items/edit'
-  end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   devise_for :admin, skip: [:registrations, :password], controllers: {
     sessions: "admin/admins/sessions"
@@ -13,6 +7,7 @@ Rails.application.routes.draw do
   namespace :admin do
     root to: "homes#index"
     resources :genres, only: [:create, :index, :edit, :update]
+    resources :items, only: [:new, :create, :index, :show, :edit, :update]
   end
   
   scope module: :public do
