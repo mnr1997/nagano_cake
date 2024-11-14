@@ -19,6 +19,7 @@ class Admin::ItemsController < AdminController
   end
 
   def show
+    @item = Item.find(params[:ida])
   end
 
   def edit
