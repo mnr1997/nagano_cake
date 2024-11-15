@@ -20,7 +20,9 @@
                 <%= item.id %>
               </td>
               <td>
-                <%= item.name %>
+                <%= link_to admin_item_path(item) do %>
+                  <%= item.name %>
+                <% end %>
               </td>
               <td>
                 <%= item.price %>

@@ -4,4 +4,14 @@ class Item < ApplicationRecord
   belongs_to :genre, optional: true
   
   has_one_attached :image
+  
+  validates :image, presence: true
+  
+  def get_image(width, height)
+    if image.blob.variable?
+      image.variant(resize_to_fit: [width, height]).processed
+    else
+      image
+    end
+  end
 end
