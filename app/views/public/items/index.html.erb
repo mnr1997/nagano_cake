@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <div class="col-2">
+      <div class="mt-5 mb-2 text-center">ジャンル検索</div>
+      <% @genres.each do |genre| %>
+        <div><%= genre.name %></div>
+      <% end %>
+    </div>
+    <div class="col-10">
+      <div class="h2 mt-5 mb-3">商品一覧（全<%= @items.count %>件）</div>
+      <% @items.each do |item| %>
+      　<div><%= image_tag item.get_image(200,100), size: "200x120", class: "object-fit-cover" %></div>
+      　<div><%= item.name %></div>
+      　<div>¥<%= (item.price * 1.1).round.to_s(:delimited) %></div>
+      <% end %>
+    </div>
+  </div>
+</div>
