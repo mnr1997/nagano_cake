@@ -9,7 +9,11 @@
     <div class="col-10">
       <div class="h2 mt-5 mb-3">商品一覧（全<%= @items.count %>件）</div>
       <% @items.each do |item| %>
-      　<div><%= image_tag item.get_image(200,100), size: "200x120", class: "object-fit-cover" %></div>
+        <div>
+          <%= link_to item_path(item) do %>
+            <%= image_tag item.get_image(200,100), size: "200x120", class: "object-fit-cover" %>
+          <% end %>
+        </div>
       　<div><%= item.name %></div>
       　<div>¥<%= (item.price * 1.1).round.to_s(:delimited) %></div>
       <% end %>
