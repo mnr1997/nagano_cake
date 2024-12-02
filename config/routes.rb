@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     root to: "homes#index"
     resources :genres, only: [:create, :index, :edit, :update]
     resources :items, only: [:new, :create, :index, :show, :edit, :update]
-    resources :customers, only: [:index, :show, :edit]
+    resources :customers, only: [:index, :show, :edit, :update]
   end
   
   scope module: :public do
