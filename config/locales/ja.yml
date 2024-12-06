@@ -27,7 +27,7 @@ ja:
         is_active: "販売ステータス"
       address:
         name: "宛名"
-        postal_code: "郵便番号"
+        postal_code: "郵便番号(ハイフンなし)"
         address: "住所"
     errors:
       messages:
