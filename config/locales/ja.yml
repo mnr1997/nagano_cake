@@ -25,6 +25,10 @@ ja:
         genre_id: "ジャンル名"
         price: "税抜き価格"
         is_active: "販売ステータス"
+      address:
+        name: "宛名"
+        postal_code: "郵便番号"
+        address: "住所"
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'
