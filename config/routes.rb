@@ -19,6 +19,7 @@ Rails.application.routes.draw do
     }
     get "homes/about" => "homes#about"
     resources :items, only: [:index, :show]
+    resources :addresses, only: [:index, :create, :edit, :update, :destroy]
     resources :customers, only: [:show] do
       collection do
         get "unsubscribe" => "customers#unsubscribe"
