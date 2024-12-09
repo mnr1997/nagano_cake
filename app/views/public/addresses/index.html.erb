@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-md-10 col-sm-10 col-10 mx-md-auto mx-sm-auto mx-auto px-0">
       <div class="h2 pt-4">配送先登録/一覧</div>
-      <%= form_with model: @address, url: customer_addresses_path(current_customer.id), method: :post do |f| %>
+      <%= form_with model: @address, url: addresses_path(current_customer.id), method: :post do |f| %>
         <div>
           <%= f.label :postal_code %>
           <%= f.text_field :postal_code, placeholder: "0000000" %>
@@ -24,6 +24,7 @@
               <th>郵便番号</th>
               <th>住所</th>
               <th>宛名</th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
@@ -32,6 +33,10 @@
               <td><%= address.postal_code %></td>
               <td><%= address.address %></td>
               <td><%= address.name %></td>
+              <td>
+                <%= link_to "編集する", edit_address_path(address), class: "btn btn-success" %>
+                <%= link_to "削除する", address_path(address), method: :delete, "data-confirm" => "本当に削除しますか？", class: "btn btn-danger" %>
+              </td>
             </tr>
             <% end %>
           </tbody>

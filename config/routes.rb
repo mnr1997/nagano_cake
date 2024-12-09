@@ -20,10 +20,10 @@ Rails.application.routes.draw do
     get "homes/about" => "homes#about"
     resources :items, only: [:index, :show]
     resources :customers, only: [:show] do
-      resources :addresses, only: [:create, :index, :edit, :update, :destroy]
       collection do
         get "unsubscribe" => "customers#unsubscribe"
         patch "withdraw" => "customers#withdraw"
+        resources :addresses, only: [:create, :index, :edit, :update, :destroy]
       end
     end
   end
