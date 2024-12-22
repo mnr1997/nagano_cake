@@ -19,13 +19,13 @@ Rails.application.routes.draw do
     }
     get "homes/about" => "homes#about"
     resources :items, only: [:index, :show]
+    resources :cart_items, only: [:index, :update, :create, :destroy]
+    delete "destroy_all" => "cart_items#destroy_all"
     resources :customers, only: [:show] do
       collection do
         get "unsubscribe" => "customers#unsubscribe"
         patch "withdraw" => "customers#withdraw"
         resources :addresses, only: [:create, :index, :edit, :update, :destroy]
-        resources :cart_items, only: [:index, :update, :create, :destroy]
-        delete "destroy_all" => "cart_items#destroy_all"
       end
     end
   end
